@@ -3,3 +3,4 @@ pandas
 numpy
 gradio
 scikit-learn
+Imbalanced-learn
