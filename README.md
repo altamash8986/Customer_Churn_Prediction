@@ -1,4 +1,4 @@
-## 🧠 About the Project: Customer Churn Prediction System
+##  About the Project: Customer Churn Prediction System
 
 The **Customer Churn Prediction System** is a complete end-to-end machine learning project that predicts whether a customer is likely to leave (churn) or stay with a company based on their usage patterns, subscription type, and account information. It is designed to help businesses **proactively identify customers at risk** and take corrective actions to improve retention.
 
