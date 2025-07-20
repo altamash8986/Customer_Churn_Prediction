@@ -8,7 +8,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder, StandardScaler
 
 # Load and preprocess dataset
-dataset = pd.read_csv("customer_churn_system.csv")
+dataset = pd.read_csv("customer_churn_prediction.csv")
 
 
 dataset["TotalCharges"] = pd.to_numeric(dataset["TotalCharges"], errors="coerce")
