@@ -96,12 +96,11 @@ def graph():
 
 
 # Plot: Pie chart
-def pie_chart():
+def pie_chart(proba):
     fig, ax = plt.subplots(figsize=(4, 4))
     labels = ["Stay", "Churn"]
-    sizes = [sum(y_pred == 0), sum(y_pred == 1)]
-    ax.pie(sizes, labels=labels, autopct="%1.1f%%", startangle=90)
-    ax.set_title("Predicted Churn")
+    ax.pie(proba, labels=labels, autopct="%1.1f%%", startangle=90)
+    ax.set_title(" Stay / Churn Probability")
     return fig
 
 
@@ -189,7 +188,7 @@ def predict_churn(
         f"{confidence} %",
         note,
         graph(),
-        pie_chart(),
+        pie_chart(proba),
     )
 
 
