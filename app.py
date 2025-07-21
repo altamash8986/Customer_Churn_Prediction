@@ -232,6 +232,7 @@ gr.Interface(
         gr.Plot(label="Churn Prediction by Pie Chart"),
     ],
     title="Customer Churn Prediction System",
-    description="Enter customer details below to check if they will churn or not.",
+    description="Enter customer details below to check if they will churn or not.\n"
+                 "PLEASE FILL ALL DETAILS BEFORE SUMBIT",
     article="MADE BY MOHD ALTAMASH",
 ).launch(share=True)
