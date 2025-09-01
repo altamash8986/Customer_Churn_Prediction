@@ -125,6 +125,38 @@ def predict_churn(
     PaymentMethod,
     MonthlyCharges,
 ):
+    # ✅ Check if any input is missing
+    inputs = [
+        gender,
+        SeniorCitizen,
+        Partner,
+        Dependents,
+        tenure,
+        PhoneService,
+        MultipleLines,
+        InternetService,
+        OnlineSecurity,
+        OnlineBackup,
+        DeviceProtection,
+        TechSupport,
+        StreamingTV,
+        StreamingMovies,
+        Contract,
+        PaperlessBilling,
+        PaymentMethod,
+        MonthlyCharges,
+    ]
+
+    if any(i is None or i == "" for i in inputs):
+        return (
+            "⚠️ Please fill all details before submitting.",
+            "N/A",
+            "N/A",
+            "⚠️ Incomplete input provided.",
+            None,
+            None,
+        )
+
     input_data = {
         "gender": 1 if gender == "Male" else 0,
         "SeniorCitizen": int(SeniorCitizen),
@@ -165,7 +197,7 @@ def predict_churn(
 
     # change scaling data into normal
     df = pd.DataFrame([input_data])
-    df_scaled = scaler.transform(df)
+    df_scaled = pd.DataFrame(scaler.transform(df), columns=x.columns)
 
     # making prediction
     prediction = model.predict(df_scaled)[0]
@@ -181,7 +213,7 @@ def predict_churn(
     else:
         note = "✅ Confident prediction."
 
-    result = "Customer will Churn" if prediction == 1 else "Customer will Stay"
+    result = "Customer will ❌ Churn" if prediction == 1 else "Customer will ✅ Stay"
     return (
         result,
         f"{accuracy*100:.2f} %",
@@ -233,6 +265,6 @@ gr.Interface(
     ],
     title="Customer Churn Prediction System",
     description="Enter customer details below to check if they will churn or not.\n"
-                 "PLEASE FILL ALL DETAILS BEFORE SUMBIT",
+    "PLEASE ENTER ALL DETAILS BEFORE SUBMIT",
     article="MADE BY MOHD ALTAMASH",
 ).launch(share=True)
