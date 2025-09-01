@@ -80,6 +80,10 @@ The dataset used is `customer_churn_system.csv`, which includes information such
 
 🔗 [LinkedIn Profile](https://www.linkedin.com/in/mohd-altamash-0997592a6?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app)
 
+### Hugging Face Demo 
+
+🔗 [Live Demo](https://huggingface.co/spaces/altamash007/Customer_Churn_Prediction)
+
 ---
 
 ### License
